@@ -67,7 +67,7 @@ RUN cd /comfyui/custom_nodes && \
 RUN pip install --no-cache-dir cryptography
 
 # Override the base image handler with our custom one
-COPY handler.py /handler.py
+COPY handler.py /rp_handler.py
 
 # Model setup script: symlinks pre-cached HF models into ComfyUI paths
 COPY model-setup.sh /model-setup.sh
