@@ -1,0 +1,21 @@
+name: Auto-release on push
+
+on:
+  push:
+    branches: [main, screencap]
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Create release
+        run: |
+          TAG="$(date +%s)"
+          gh release create "$TAG" --generate-notes --target "${GITHUB_REF_NAME}"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
