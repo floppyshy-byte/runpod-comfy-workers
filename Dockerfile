@@ -1,6 +1,6 @@
 FROM runpod/worker-comfyui:5.8.5-base
 
-# Prevent custom nodes from auto-downloading models during build.
+# Prevent custom nodes from auto-downloading models during build
 RUN touch /comfyui/custom_nodes/skip_download_model
 
 # ── HEAVY CUSTOM NODES (with pip installs) ──────────────────────────────────
