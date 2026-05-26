@@ -6,7 +6,7 @@ set -e
 # organized by category (checkpoints, loras, sams, ultralytics/bbox).
 
 HF_CACHE="/runpod-volume/huggingface-cache/hub"
-REPO="models--floppyshy-byte--prompt-studio-models"
+REPO="models--Floppyshy--prompt-studio-models"
 
 if [ -f "$HF_CACHE/$REPO/refs/main" ]; then
     SNAP=$(cat "$HF_CACHE/$REPO/refs/main")
